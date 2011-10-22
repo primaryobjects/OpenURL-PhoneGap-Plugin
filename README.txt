@@ -9,7 +9,27 @@ SETUP:
 2. Edit PhoneGap.plist, in the section "Plugins", add an entry "OpenURL" with the key "OpenURL".
 
 USAGE:
-From javascript simply call: PhoneGap.exec('OpenURL.open', 'http://www.primaryobjects.com');
+From javascript simply call:
+
+PhoneGap.exec('OpenURL.open', 'http://www.primaryobjects.com');
+
+More advanced example:
+
+function launchUrl() {
+    // Get the URL from an ahref link named 'webSite'.
+    var url = $('#webSite').attr('href');
+    
+    if (isMobileDevice()) {
+	// iPhone url
+	PhoneGap.exec('OpenURL.open', url);
+    }
+    else {
+	// Web browser url
+        window.open(url);
+    }
+}
+
+Of course, you'll need to install http://www.phonegap.com.
 
 ---
 Copyright © 2011 Kory Becker (http://www.primaryobjects.com)
