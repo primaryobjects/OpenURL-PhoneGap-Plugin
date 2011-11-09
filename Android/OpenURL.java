@@ -1,3 +1,8 @@
+//
+//  OpenURL.java
+//
+//  Created by Kory Becker on 11/08/11.
+//
 package com.phonegap.openurl;
 
 import org.json.JSONArray;
