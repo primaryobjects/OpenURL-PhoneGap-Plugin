@@ -4,14 +4,24 @@ DESCRIPTION:
 A simple PhoneGap plug-in to launch a URL in a new browser on the iPhone.
 Simply call the plug-in from JavaScript upon any button click event to launch the Safari browser to your url.
 
-SETUP:
+IPHONE SETUP:
 1. Copy the files OpenURL.h and OpenURL.m into your PhoneGap project's Plugins folder.
 2. Edit PhoneGap.plist, in the section "Plugins", add an entry "OpenURL" with the key "OpenURL".
+
+ANDROID SETUP:
+1. Create a new package in your project named "com.phonegap.openurl".
+2. Copy the file OpenURL.java into the package.
+3. Edit res/xml/plugins.xml and add the following entry:
+<plugin name="OpenURL" value="com.phonegap.openurl.OpenURL"/>
 
 USAGE:
 From javascript simply call:
 
+// iPhone
 PhoneGap.exec('OpenURL.open', 'http://www.primaryobjects.com');
+
+// Android
+PhoneGap.exec(null, null, 'OpenURL', 'open', 'http://www.primaryobjects.com');
 
 More advanced example:
 
